@@ -12,6 +12,7 @@ VALIDATE(){
     echo "$2..FAILURE"
     else
     echo "$2 ..SUCCESS"
+    fi
 }
 
 if [ $USERID -ne 0 ]
@@ -32,7 +33,7 @@ VALIDATE $? "Starting mysql server"
 # mysql_secure_installation --set-root-pass ExpenseApp@1
 # VALIDATE $? "Setting up root password"
 
-mysql -h praveenmech.online -uroot -p${mysql_root_password} -e 'show databases;' &>>LOGFILE
+mysql -h db.praveenmech.online -uroot -p${mysql_root_password} -e 'show databases;' &>>LOGFILE
 
 if [ echo $? -ne 0 ]
 then
