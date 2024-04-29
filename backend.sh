@@ -4,7 +4,7 @@ SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
 echo " please enter Db password"
 read -s mysql_root_password
-if [ $USERID -ne 0]
+if [ $USERID -ne 0 ]
 then
     echo "please run the script with root access"
 else
